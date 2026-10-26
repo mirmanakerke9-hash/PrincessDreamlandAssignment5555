@@ -14,7 +14,7 @@ const starterPrincesses = [
     key: "cinderella",
     name: "Cinderella",
     category: "classic",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=80",
+    image: "https://wallpaperaccess.com/full/3520000.jpg",
     alt: "Fairytale castle",
     text: "A kind-hearted dreamer who believes in magic.",
     story: "Cinderella teaches us to be kind, stay hopeful, and believe in our dreams."
@@ -23,7 +23,7 @@ const starterPrincesses = [
     key: "mulan",
     name: "Mulan",
     category: "brave",
-    image: "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=700&q=80",
+    image: "https://lumiere-a.akamaihd.net/v1/images/2024_hb_disneyprincess_mulan_mobile_3497_36a691ee.jpeg?region=0%2C0%2C1024%2C768",
     alt: "Beautiful green forest",
     text: "A courageous heroine who protects her family.",
     story: "Mulan is brave, determined, and willing to challenge expectations to protect the people she loves."
@@ -32,7 +32,7 @@ const starterPrincesses = [
     key: "elsa",
     name: "Elsa",
     category: "magical",
-    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=700&q=80",
+    image: "https://i1.sndcdn.com/artworks-000110816449-0l34b3-t500x500.jpg",
     alt: "Magical snowy mountains",
     text: "A magical queen learning to embrace her powers.",
     story: "Elsa learns that accepting herself and caring for others are more powerful than fear."
