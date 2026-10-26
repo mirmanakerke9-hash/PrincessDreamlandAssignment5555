@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Princess Dreamland</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark princess-nav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Princess Dreamland</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home" data-i18n="nav_home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#princesses" data-i18n="nav_princesses">Princesses</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq" data-i18n="nav_faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html" data-i18n="nav_team">Our Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav_contact">Contact</a></li>
+          <li class="nav-item"><select id="languageSelect" class="lang-select" aria-label="Choose language">
+            <option value="en">English</option>
+            <option value="ru">Русский</option>
+            <option value="kk">Қазақша</option>
+          </select></li>
+          <li class="nav-item"><button id="themeToggle" class="theme-btn" type="button" aria-label="Switch between day and night theme">&#9790; Night</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="hero text-center">
+    <div class="container">
+      <p class="hero-small" data-i18n="hero_small">WELCOME TO A MAGICAL WORLD</p>
+      <h1>Princess Dreamland</h1>
+      <p id="greeting" class="greeting"></p>
+      <form id="nameForm" class="name-form">
+        <input id="nameInput" class="form-control" type="text" maxlength="20" placeholder="Enter your name" data-i18n-placeholder="name_placeholder" aria-label="Your name">
+        <button type="submit" class="btn pink-btn" data-i18n="name_button">Greet Me</button>
+      </form>
+      <p data-i18n="hero_text">Discover your favorite princesses and enter a world of magic.</p>
+      <a href="#princesses" class="btn pink-btn" data-i18n="hero_btn">Explore Princesses</a>
+    </div>
+  </header>
+
+  <main class="container py-5">
+    <section id="princesses" class="mb-5">
+      <h2 class="section-title text-center" data-i18n="princesses_title">Our Princesses</h2>
+      <p class="text-center" data-i18n="princesses_text">Find a princess and discover her story.</p>
+
+      <div class="row g-3 my-4">
+        <div class="col-md-8">
+          <input id="searchInput" class="form-control" type="text" placeholder="Search princess..." data-i18n-placeholder="search_placeholder">
+        </div>
+        <div class="col-md-4">
+          <select id="categoryFilter" class="form-select">
+            <option value="all" data-i18n="filter_all">All princesses</option>
+            <option value="classic" data-i18n="filter_classic">Classic</option>
+            <option value="brave" data-i18n="filter_brave">Brave</option>
+            <option value="magical" data-i18n="filter_magical">Magical</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row g-4" id="princessList"></div>
+
+      <p id="noResults" class="text-center mt-4" hidden>No princesses found. Try another search.</p>
+
+      <div class="text-center mt-4">
+        <button id="loadMoreBtn" class="btn pink-btn" type="button" data-i18n="load_more">Load More Princesses</button>
+        <p id="loadMessage" class="mt-3" aria-live="polite"></p>
+      </div>
+    </section>
+
+
+    <section id="gallery" class="my-5">
+      <h2 class="section-title text-center" data-i18n="gallery_title">Magic Gallery</h2>
+      <p class="text-center" data-i18n="gallery_text">Click a small picture to see it bigger.</p>
+      <div class="gallery-box mx-auto">
+        <img id="mainImage" class="main-image" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80" alt="Fairytale castle">
+        <p id="mainCaption" class="gallery-caption">Fairytale castle</p>
+        <div class="thumbnails">
+          <button type="button" class="thumb-btn active" data-full="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80" data-caption="Fairytale castle"><img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=200&q=80" alt="Fairytale castle thumbnail"></button>
+          <button type="button" class="thumb-btn" data-full="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1000&q=80" data-caption="Enchanted green forest"><img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=200&q=80" alt="Green forest thumbnail"></button>
+          <button type="button" class="thumb-btn" data-full="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=80" data-caption="Snowy mountains of the ice kingdom"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=200&q=80" alt="Snowy mountains thumbnail"></button>
+          <button type="button" class="thumb-btn" data-full="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80" data-caption="A sunny island beach"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=200&q=80" alt="Island beach thumbnail"></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop" class="my-5">
+      <h2 class="section-title text-center" data-i18n="shop_title">Magic Shop</h2>
+      <p class="text-center" data-i18n="shop_text">Filter royal treasures by category and price.</p>
+      <div class="row g-3 my-4">
+        <div class="col-md-6">
+          <select id="productCategory" class="form-select" aria-label="Product category">
+            <option value="all" data-i18n="shop_cat_all">All categories</option>
+            <option value="accessories" data-i18n="shop_cat_acc">Accessories</option>
+            <option value="books" data-i18n="shop_cat_books">Books</option>
+            <option value="music" data-i18n="shop_cat_music">Music</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <select id="productPrice" class="form-select" aria-label="Product price">
+            <option value="all" data-i18n="shop_price_all">All prices</option>
+            <option value="low" data-i18n="shop_price_low">Under $15</option>
+            <option value="mid" data-i18n="shop_price_mid">$15 - $30</option>
+            <option value="high" data-i18n="shop_price_high">Over $30</option>
+          </select>
+        </div>
+      </div>
+      <div class="row g-4" id="productList"></div>
+      <p id="noProducts" class="text-center mt-4" hidden>No treasures found. Try another filter.</p>
+    </section>
+
+    <section id="news" class="my-5">
+      <h2 class="section-title text-center" data-i18n="news_title">Princess News Feed</h2>
+      <div class="news-buttons text-center my-4">
+        <button type="button" class="btn pink-btn news-btn" data-category="movies" data-i18n="news_movies">Movies</button>
+        <button type="button" class="btn pink-btn news-btn" data-category="music" data-i18n="news_music">Music</button>
+        <button type="button" class="btn pink-btn news-btn" data-category="tales" data-i18n="news_tales">Fairy Tales</button>
+      </div>
+      <div class="news-box mx-auto">
+        <h3 id="newsHeading" class="news-heading"></h3>
+        <ul id="newsList" class="news-list"></ul>
+      </div>
+    </section>
+
+    <section class="feature-section text-center my-5">
+      <h2 class="section-title" data-i18n="feature_title">A Little Magic for Your Day</h2>
+      <p data-i18n="feature_text">Change the page color and make your own magical atmosphere.</p>
+      <button id="changeBgBtn" class="btn pink-btn" data-i18n="bg_btn">Change Background</button>
+      <p class="mt-3" data-i18n="datetime_label">Current date and time:</p>
+      <p id="dateTime" class="fw-bold"></p>
+      <button id="timeBtn" class="btn pink-btn" type="button" data-i18n="time_btn">Show Current Time</button>
+      <p id="timeDisplay" class="fw-bold mt-3" aria-live="polite"></p>
+    </section>
+
+
+    <section id="facts" class="my-5 text-center">
+      <h2 class="section-title" data-i18n="fact_title">Princess Fact</h2>
+      <p data-i18n="fact_text">Press the button to learn something new about fairytales.</p>
+      <div class="fact-box mx-auto">
+        <p id="factArea" class="fact-text">Your magical fact will appear here.</p>
+      </div>
+      <button id="factBtn" class="btn pink-btn mt-3" type="button" data-i18n="fact_btn">New Magic Fact</button>
+    </section>
+
+    <section id="about" class="my-5 text-center">
+      <h2 class="section-title" data-i18n="about_title">About Princess Dreamland</h2>
+      <div class="about-box mx-auto">
+        <p data-i18n="about_text">Princess Dreamland is a magical corner of the internet created by two students who love fairytales.</p>
+        <p id="moreText" class="more-text" data-i18n="about_more">We built this website to practice HTML, CSS, and JavaScript. Every page is designed to feel like a storybook, with ratings, sounds, animations, and surprises waiting for you.</p>
+        <button id="readMoreBtn" class="btn pink-btn" type="button" data-i18n="readmore_more">Read More</button>
+      </div>
+    </section>
+
+    <section id="faq" class="my-5">
+      <h2 class="section-title text-center mb-4" data-i18n="faq_title">Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#answer1">
+              <span data-i18n="faq_q1">What is Princess Dreamland?</span>
+            </button>
+          </h3>
+          <div id="answer1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body" data-i18n="faq_a1">Princess Dreamland is a fan-inspired website where you can explore fairytale characters.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer2">
+              <span data-i18n="faq_q2">How can I find a princess?</span>
+            </button>
+          </h3>
+          <div id="answer2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body" data-i18n="faq_a2">Use the search box or choose a category from the filter.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer3">
+              <span data-i18n="faq_q3">How can I contact the team?</span>
+            </button>
+          </h3>
+          <div id="answer3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body" data-i18n="faq_a3">Visit our Contact page and fill out the contact form.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="subscribe-section text-center my-5">
+      <h2 class="section-title" data-i18n="newsletter_title">Join Our Magical Newsletter</h2>
+      <p data-i18n="newsletter_text">Subscribe to receive updates from Princess Dreamland.</p>
+      <form id="signupForm" class="form-box mx-auto">
+        <div class="mb-3">
+          <input id="signupName" class="form-control" type="text" placeholder="Your name" data-i18n-placeholder="signup_name" required>
+        </div>
+        <div class="mb-3">
+          <input id="signupEmail" class="form-control" type="email" placeholder="Your email" data-i18n-placeholder="signup_email" required>
+        </div>
+        <button type="submit" class="btn pink-btn" data-i18n="subscribe_btn">Subscribe</button>
+        <p id="signupMessage" class="mt-3" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer text-center">
+    <p>© 2026 Princess Dreamland</p>
+    <p><a href="team.html">Our Team</a> | <a href="contact.html">Contact</a></p>
+  </footer>
+
+  <div class="modal fade" id="princessModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="modalTitle">Princess</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modalStory"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn pink-btn" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
